@@ -1,0 +1,126 @@
+#newContactForm{
+    width: fit-content;
+    height: fit-content;
+    background-color: #fff;
+    margin: auto;
+    margin-top: 30px;
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px 1px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+    padding: 40px 20px;
+}
+
+#formTitle{
+    font-family: K2D;
+    font-size: 24px;
+    color: #8403DA;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#inputsContainer{
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    row-gap: 25px;
+}
+
+.inputBox{
+    width: fit-content;
+    height: fit-content;
+    background-color: #eee;
+    padding: 10px 13px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.inputBox_label{
+    width: fit-content;
+    height: fit-content;
+}
+
+.inputBox_input{
+    width: 7vw ;
+    min-width: 300px;
+    height: 20px;
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.inputBox_icon{
+    width: auto;
+    height: auto;
+    min-width: 20px;
+    min-height: 20px;
+    max-width: 24px;
+    max-height: 24px;
+}
+
+#buttonsContainer{
+    width: 100%;
+    min-width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#submitBtn{
+    width: fit-content;
+    height: fit-content;
+    background-color: #8403DA;
+    border: none;
+    border-radius: 999px;
+    font-size: 14px;
+    color: #fff;
+    padding: 12px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 5px;
+    cursor: pointer;
+    transition: all 0.15s ease-out;
+}
+#submitBtn:hover{
+    transform: scale(1.05) translateY(5px);
+    background-color: #740fb8;
+}
+#submitBtn:active{
+    transform: scale(0.95) translateY(0px);
+    background-color: #39005f;
+}
+
+#plusIcon{
+    width: 20px;
+    height: 20px;
+}
+
+#resetBtn{
+    width: fit-content;
+    height: auto;
+    background: none;
+    margin-right: 30px;
+    border: none;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.7);
+    cursor: pointer;
+    transition: all 0.15s ease-out;
+}
+#resetBtn:hover{
+    transform: scale(1.2) translateY(10px);
+    color: #8403DA;
+}
+#resetBtn:active{
+    font-weight: bold;
+    color: #39005f;
+    text-decoration: overline;
+}
