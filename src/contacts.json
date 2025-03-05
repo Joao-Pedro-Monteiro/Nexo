@@ -17,6 +17,12 @@
             "phone": "+55(00)123456789",
             "email": "example@example.com",
             "instagram": "@example"
+        },
+        {
+            "name": "Eu [trabalho]",
+            "phone": "+55(00)123456789",
+            "email": "example@example.com",
+            "instagram": "@example"
         }
     ]
 }
