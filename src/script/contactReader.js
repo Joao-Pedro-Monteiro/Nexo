@@ -2,6 +2,11 @@
 function generateContactList(contacts) {
     let html = '';
     contacts.forEach((contact, index) => {
+        contact.phone = contact.phone.replace(/\D/g, ''); // Remove todos os caracteres não numéricos
+        contact.instagram = contact.instagram.replace(/@/g, ''); // Remove o caractere '@'
+
+
+
         const contactId = `contact${index + 1}`; // Gera um ID único para cada contato
         html += `
             <div class="contactList_item">
@@ -16,16 +21,16 @@ function generateContactList(contacts) {
                 </label>
 
                 <div class="contactList_actions">
-                    <button name="contactList_actionInfo" class="contactList_actionBtn" title="info">
+                    <button name="contactList_actionInfo" class="contactList_actionBtn" title="info" onclick="infoRedirect('${contact.phone}')">
                         <img src="./images/SVG/info.svg">
                     </button>
-                    <button name="contactList_actionSms" class="contactList_actionBtn" title="Sms">
-                        <img src="./images/SVG/sms.svg">
+                    <button name="contactList_actionEmail" class="contactList_actionBtn" title="Email" onclick="socialRedirect('mailto:${contact.email}')">
+                        <img src="./images/SVG/mail2.svg">
                     </button>
-                    <button name="contactList_actionWhatsapp" class="contactList_actionBtn" title="Whatsapp">
+                    <button name="contactList_actionWhatsapp" class="contactList_actionBtn" title="Whatsapp" onclick="socialRedirect('https://api.whatsapp.com/send/?phone=${contact.phone}&text&type=phone_number&app_absent=0')">
                         <img src="./images/SVG/whatsapp.svg">
                     </button>
-                    <button name="contactList_actionInstagram" class="contactList_actionBtn" title="Instagram">
+                    <button name="contactList_actionInstagram" class="contactList_actionBtn" title="Instagram" onclick="socialRedirect('https://instagram.com/${contact.instagram}')">
                         <img src="./images/SVG/instagram2.svg">
                     </button>
                 </div>
@@ -51,3 +56,17 @@ window.addEventListener('DOMContentLoaded', async () => {
         }
     }
 });
+
+//Função de redirecionamento para redes sociais
+function socialRedirect(url) {
+    window.open(url);
+}
+
+function infoRedirect(ctt) {
+    if (ctt) {
+        localStorage.setItem('selectedcontactPhone', ctt);
+        window.location.href = './contactInfo.html';
+    } else {
+        alert('Número de telefone não encontrado.');    
+    }
+}

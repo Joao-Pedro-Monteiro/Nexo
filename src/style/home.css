@@ -127,7 +127,7 @@ button[name="contactList_actionInfo"]:hover{
     border-radius: 999px;
     box-shadow: 0 0 30px #000;
 }
-button[name="contactList_actionSms"]:hover{
+button[name="contactList_actionEmail"]:hover{
     box-shadow: 0 0 30px #4bd0fc;
 }
 button[name="contactList_actionWhatsapp"]:hover{

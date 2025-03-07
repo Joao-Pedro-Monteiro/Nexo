@@ -2,27 +2,15 @@
     "contacts": [
         {
             "name": "Eu",
-            "phone": "+55(00)123456789",
+            "phone": "(00)123456789",
             "email": "example@example.com",
-            "instagram": "@example"
+            "instagram": "@username"
         },
         {
-            "name": "Ele",
-            "phone": "+55(00)123456789",
+            "name": "Eu [teste]",
+            "phone": "(00)123456789",
             "email": "example@example.com",
-            "instagram": "@example"
-        },
-        {
-            "name": "Ela",
-            "phone": "+55(00)123456789",
-            "email": "example@example.com",
-            "instagram": "@example"
-        },
-        {
-            "name": "Eu [trabalho]",
-            "phone": "+55(00)123456789",
-            "email": "example@example.com",
-            "instagram": "@example"
+            "instagram": "@username"
         }
     ]
 }
