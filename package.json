@@ -1,0 +1,27 @@
+{
+  "name": "nexo",
+  "version": "0.7.0",
+  "description": "A Contacts Manager",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GelinGLN/Nexo.git"
+  },
+  "keywords": [
+    "Contact",
+    "Manager"
+  ],
+  "author": "João Pedro de Brito Monteiro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GelinGLN/Nexo/issues"
+  },
+  "homepage": "https://github.com/GelinGLN/Nexo#readme",
+  "devDependencies": {
+    "electron": "^35.0.0"
+  }
+}
