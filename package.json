@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "test",
-    "start": "electron ."
-  },
-  "repository": {
+    "start": "electron .",
+    "dev": "electron . --watch"
+  },  "repository": {
     "type": "git",
     "url": "git+https://github.com/GelinGLN/Nexo.git"
   },

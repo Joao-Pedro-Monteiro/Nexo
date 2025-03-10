@@ -76,7 +76,7 @@
 #submitBtn{
     width: fit-content;
     height: fit-content;
-    background-color: #8403DA;
+    background-color: gray;
     border: none;
     border-radius: 999px;
     font-size: 14px;

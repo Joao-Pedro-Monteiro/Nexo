@@ -6,3 +6,18 @@ function redir(path, timeout) {
         }, timeout * 1000);
     }
 }
+
+// Funções de redirecionamento (adaptadas para Node.js)
+function socialRedirect(url) {
+    console.log(`Redirecionando para: ${url}`);
+    window.location.href = url;
+}
+
+function infoRedirect(ctt) {
+    if (ctt) {
+        console.log(`Telefone selecionado: ${ctt}`);
+        localStorage.setItem('selectedPhone', ctt);
+    } else {
+        console.log('Número de telefone não encontrado.');
+    }
+}

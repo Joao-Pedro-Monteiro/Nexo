@@ -1,16 +1,314 @@
-{
-    "contacts": [
-        {
-            "name": "Eu",
-            "phone": "(00)123456789",
-            "email": "example@example.com",
-            "instagram": "@username"
-        },
-        {
-            "name": "Eu [teste]",
-            "phone": "(00)123456789",
-            "email": "example@example.com",
-            "instagram": "@username"
-        }
-    ]
-}
+[
+  {
+    "name": "João Silva",
+    "phone": "(44)99999-8110",
+    "email": "joao.silva@email.com",
+    "instagram": "@joaosilva"
+  },
+  {
+    "name": "Maria Santos",
+    "phone": "(11)98765-4321",
+    "email": "maria.santos@email.com", 
+    "instagram": "@mariasantos"
+  },
+  {
+    "name": "Pedro Oliveira",
+    "phone": "(21)99876-5432",
+    "email": "pedro.oliveira@email.com",
+    "instagram": "@pedrooliveira"
+  },
+  {
+    "name": "Ana Costa",
+    "phone": "(31)98765-1234",
+    "email": "ana.costa@email.com",
+    "instagram": "@anacosta"
+  },
+  {
+    "name": "Lucas Pereira",
+    "phone": "(51)99999-8888",
+    "email": "lucas.pereira@email.com",
+    "instagram": "@lucaspereira"
+  },
+  {
+    "name": "Julia Lima",
+    "phone": "(61)98888-7777",
+    "email": "julia.lima@email.com",
+    "instagram": "@julialima"
+  },
+  {
+    "name": "Rafael Souza",
+    "phone": "(71)97777-6666",
+    "email": "rafael.souza@email.com",
+    "instagram": "@rafaelsouza"
+  },
+  {
+    "name": "Carla Ferreira",
+    "phone": "(81)96666-5555",
+    "email": "carla.ferreira@email.com",
+    "instagram": "@carlaferreira"
+  },
+  {
+    "name": "Bruno Santos",
+    "phone": "(91)95555-4444",
+    "email": "bruno.santos@email.com",
+    "instagram": "@brunosantos"
+  },
+  {
+    "name": "Amanda Silva",
+    "phone": "(12)94444-3333",
+    "email": "amanda.silva@email.com",
+    "instagram": "@amandasilva"
+  },
+  {
+    "name": "Felipe Oliveira",
+    "phone": "(13)93333-2222",
+    "email": "felipe.oliveira@email.com",
+    "instagram": "@felipeoliveira"
+  },
+  {
+    "name": "Mariana Costa",
+    "phone": "(14)92222-1111",
+    "email": "mariana.costa@email.com",
+    "instagram": "@marianacosta"
+  },
+  {
+    "name": "Gabriel Pereira",
+    "phone": "(15)91111-0000",
+    "email": "gabriel.pereira@email.com",
+    "instagram": "@gabrielpereira"
+  },
+  {
+    "name": "Isabela Lima",
+    "phone": "(16)90000-9999",
+    "email": "isabela.lima@email.com",
+    "instagram": "@isabelalima"
+  },
+  {
+    "name": "Thiago Souza",
+    "phone": "(17)99999-8888",
+    "email": "thiago.souza@email.com",
+    "instagram": "@thiagosouza"
+  },
+  {
+    "name": "Beatriz Ferreira",
+    "phone": "(18)98888-7777",
+    "email": "beatriz.ferreira@email.com",
+    "instagram": "@beatrizferreira"
+  },
+  {
+    "name": "Rodrigo Santos",
+    "phone": "(19)97777-6666",
+    "email": "rodrigo.santos@email.com",
+    "instagram": "@rodrigosantos"
+  },
+  {
+    "name": "Carolina Silva",
+    "phone": "(20)96666-5555",
+    "email": "carolina.silva@email.com",
+    "instagram": "@carolinasilva"
+  },
+  {
+    "name": "Gustavo Oliveira",
+    "phone": "(21)95555-4444",
+    "email": "gustavo.oliveira@email.com",
+    "instagram": "@gustavooliveira"
+  },
+  {
+    "name": "Larissa Costa",
+    "phone": "(22)94444-3333",
+    "email": "larissa.costa@email.com",
+    "instagram": "@larissacosta"
+  },
+  {
+    "name": "Matheus Pereira",
+    "phone": "(23)93333-2222",
+    "email": "matheus.pereira@email.com",
+    "instagram": "@matheuspereira"
+  },
+  {
+    "name": "Camila Lima",
+    "phone": "(24)92222-1111",
+    "email": "camila.lima@email.com",
+    "instagram": "@camilalima"
+  },
+  {
+    "name": "Leonardo Souza",
+    "phone": "(25)91111-0000",
+    "email": "leonardo.souza@email.com",
+    "instagram": "@leonardosouza"
+  },
+  {
+    "name": "Fernanda Ferreira",
+    "phone": "(26)90000-9999",
+    "email": "fernanda.ferreira@email.com",
+    "instagram": "@fernandaferreira"
+  },
+  {
+    "name": "Diego Santos",
+    "phone": "(27)99999-8888",
+    "email": "diego.santos@email.com",
+    "instagram": "@diegosantos"
+  },
+  {
+    "name": "Natália Silva",
+    "phone": "(28)98888-7777",
+    "email": "natalia.silva@email.com",
+    "instagram": "@nataliasilva"
+  },
+  {
+    "name": "André Oliveira",
+    "phone": "(29)97777-6666",
+    "email": "andre.oliveira@email.com",
+    "instagram": "@andreoliveira"
+  },
+  {
+    "name": "Bianca Costa",
+    "phone": "(30)96666-5555",
+    "email": "bianca.costa@email.com",
+    "instagram": "@biancacosta"
+  },
+  {
+    "name": "Victor Pereira",
+    "phone": "(31)95555-4444",
+    "email": "victor.pereira@email.com",
+    "instagram": "@victorpereira"
+  },
+  {
+    "name": "Renata Lima",
+    "phone": "(32)94444-3333",
+    "email": "renata.lima@email.com",
+    "instagram": "@renatalima"
+  },
+  {
+    "name": "Marcelo Souza",
+    "phone": "(33)93333-2222",
+    "email": "marcelo.souza@email.com",
+    "instagram": "@marcelosouza"
+  },
+  {
+    "name": "Daniela Ferreira",
+    "phone": "(34)92222-1111",
+    "email": "daniela.ferreira@email.com",
+    "instagram": "@danielaferreira"
+  },
+  {
+    "name": "Ricardo Santos",
+    "phone": "(35)91111-0000",
+    "email": "ricardo.santos@email.com",
+    "instagram": "@ricardosantos"
+  },
+  {
+    "name": "Patricia Silva",
+    "phone": "(36)90000-9999",
+    "email": "patricia.silva@email.com",
+    "instagram": "@patriciasilva"
+  },
+  {
+    "name": "Henrique Oliveira",
+    "phone": "(37)99999-8888",
+    "email": "henrique.oliveira@email.com",
+    "instagram": "@henriqueoliveira"
+  },
+  {
+    "name": "Letícia Costa",
+    "phone": "(38)98888-7777",
+    "email": "leticia.costa@email.com",
+    "instagram": "@leticiacosta"
+  },
+  {
+    "name": "Roberto Pereira",
+    "phone": "(39)97777-6666",
+    "email": "roberto.pereira@email.com",
+    "instagram": "@robertopereira"
+  },
+  {
+    "name": "Juliana Lima",
+    "phone": "(40)96666-5555",
+    "email": "juliana.lima@email.com",
+    "instagram": "@julianalima"
+  },
+  {
+    "name": "Alex Souza",
+    "phone": "(41)95555-4444",
+    "email": "alex.souza@email.com",
+    "instagram": "@alexsouza"
+  },
+  {
+    "name": "Monica Ferreira",
+    "phone": "(42)94444-3333",
+    "email": "monica.ferreira@email.com",
+    "instagram": "@monicaferreira"
+  },
+  {
+    "name": "Paulo Santos",
+    "phone": "(43)93333-2222",
+    "email": "paulo.santos@email.com",
+    "instagram": "@paulosantos"
+  },
+  {
+    "name": "Sandra Silva",
+    "phone": "(44)92222-1111",
+    "email": "sandra.silva@email.com",
+    "instagram": "@sandrasilva"
+  },
+  {
+    "name": "Eduardo Oliveira",
+    "phone": "(45)91111-0000",
+    "email": "eduardo.oliveira@email.com",
+    "instagram": "@eduardooliveira"
+  },
+  {
+    "name": "Cristina Costa",
+    "phone": "(46)90000-9999",
+    "email": "cristina.costa@email.com",
+    "instagram": "@cristinacosta"
+  },
+  {
+    "name": "Fernando Pereira",
+    "phone": "(47)99999-8888",
+    "email": "fernando.pereira@email.com",
+    "instagram": "@fernandopereira"
+  },
+  {
+    "name": "Adriana Lima",
+    "phone": "(48)98888-7777",
+    "email": "adriana.lima@email.com",
+    "instagram": "@adrianalima"
+  },
+  {
+    "name": "Marcos Souza",
+    "phone": "(49)97777-6666",
+    "email": "marcos.souza@email.com",
+    "instagram": "@marcossouza"
+  },
+  {
+    "name": "Regina Ferreira",
+    "phone": "(50)96666-5555",
+    "email": "regina.ferreira@email.com",
+    "instagram": "@reginaferreira"
+  },
+  {
+    "name": "Carlos Santos",
+    "phone": "(51)95555-4444",
+    "email": "carlos.santos@email.com",
+    "instagram": "@carlossantos"
+  },
+  {
+    "name": "Luciana Silva",
+    "phone": "(52)94444-3333",
+    "email": "luciana.silva@email.com",
+    "instagram": "@lucianasilva"
+  },
+  {
+    "name": "Daniel Oliveira",
+    "phone": "(53)93333-2222",
+    "email": "daniel.oliveira@email.com",
+    "instagram": "@danieloliveira"
+  },
+  {
+    "name": "Fabiana Costa",
+    "phone": "(54)92222-1111",
+    "email": "fabiana.costa@email.com",
+    "instagram": "@fabianacosta"
+  }
+]
