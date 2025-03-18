@@ -10,6 +10,7 @@
         <script src="./behavior/contactListItem.js" type="text/javascript"></script>
         <script src="./script/redir.js" type="text/javascript"></script>
         <script src="./script/childprocess.js" type="text/javascript"></script>
+        <script src="./script/deleteContact.js" type="text/javascript"></script>
     </head>
     <body>
         <header><img id="headerWordmark" src="./images/SVG/wordmark.svg" alt="Nexo" onclick="redir('./index.html', 0.1)"></header>
@@ -99,6 +100,8 @@
                         <button name="contactList_actionInstagram" class="contactList_actionBtn" title="Instagram" onclick="openWithBrowser('https://instagram.com/${contact.instagram}')">
                             <img src="./images/SVG/instagram2.svg">
                         </button>
+
+                        <span class="contactList_deleteBtn" onclick="deleteContact('${contact.phone}')" title="Excluir"><img src="./images/SVG/trash.svg"></span>
                     </div>
                     <span class="separator"></span>
                 </div>

@@ -65,15 +65,15 @@
 
 /* Contact Actions */
 .contactList_actions{
-    width: fit-content;
+    width: 100%;
     height: fit-content;
-    margin-top: 10px;
-    margin-left: 30px;
+    padding: 10px 30px 10px;
     display: flex;
     opacity: 0;
     transform: translateY(10px);
     transition: all 0.3s ease;
     flex-direction: row;
+    align-items: center;
     column-gap: 10px;
     pointer-events: none;
 }
@@ -93,6 +93,9 @@
     background-color: #f0f0f0;
     border: solid 1px #d9d9d9;
     border-radius: 20px;
+}
+.contactList_item:has(.contactList_itemToggle:checked) .contactList_deleteBtn {
+    opacity: 1;
 }
 
 .contactList_actions.visible {
@@ -135,4 +138,20 @@ button[name="contactList_actionWhatsapp"]:hover{
 }
 button[name="contactList_actionInstagram"]:hover{
     box-shadow: 0 0 30px #D43377;
+}
+
+/* Delete Button */
+.contactList_deleteBtn{
+    width: fit-content;
+    height: fit-content;
+    max-width: 30px;
+    max-height: 30px;
+    margin-left: auto;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.contactList_deleteBtn img{
+    width: 19px;
+    height: 20px;
 }
