@@ -4,6 +4,11 @@ function redir(path, timeout) {
         setTimeout(() => {
             window.location.assign(path);
         }, timeout * 1000);
+    } else if (timeout === undefined) {
+        window.location.assign(path);
+    }
+    else {
+        console.error(`HTTP 400: Bad Request -> "Sintaxe de redirecionamento inválida"`);
     }
 }
 

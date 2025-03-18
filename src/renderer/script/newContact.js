@@ -1,8 +1,7 @@
 const fs = require('fs').promises; // Usando promises para operações assíncronas
 const path = require('path');
-const filePath = path.join(__dirname, './contacts.json'); // Caminho para o arquivo JSON
+const filePath = path.join(__dirname, '..', '..', 'data', 'contacts.json'); // Caminho para o arquivo JSON
 let formValues = {};
-const form = document.getElementById('newContactForm');
 
 window.addEventListener('DOMContentLoaded', () => {
 
