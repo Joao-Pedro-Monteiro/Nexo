@@ -140,18 +140,61 @@ button[name="contactList_actionInstagram"]:hover{
     box-shadow: 0 0 30px #D43377;
 }
 
+/* Edit Button */
+.contactList_editBtn{
+    width: 19px;
+    height: 19px;
+    background: none;
+    margin-left: auto;
+    border: none;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all ease 0.1s;
+}
+.contactList_editBtn img{
+    width: 20px;
+    height: 20px;
+}
+
 /* Delete Button */
 .contactList_deleteBtn{
     width: fit-content;
     height: fit-content;
-    max-width: 30px;
-    max-height: 30px;
-    margin-left: auto;
-    opacity: 0;
+    background: none;
+    border: none;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
+    transition: all ease 0.1s;
+}
+.contactList_deleteBtn img{
+    width: 20px;
+    height: 20px;
 }
 
-.contactList_deleteBtn img{
-    width: 19px;
-    height: 20px;
+/* Comportamento do botão de edição*/
+.contactList_editBtn:hover {
+    padding-top: 10px;
+    border-top: solid 2px #0095ff;
+}
+
+.contactList_editBtn:focus{
+    padding-top: 10px;
+    border-top: solid 2px #0095ff;
+}
+
+/*  Comportamento do botão de exclusão*/
+.contactList_deleteBtn:hover{
+    padding-top: 3px;
+    border-top: solid 2px #ff0000;
+}
+
+.contactList_deleteBtn:focus{
+    padding-top: 3px;
+    border-top: solid 2px #ff0000;
 }

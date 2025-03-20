@@ -26,7 +26,7 @@ window.addEventListener('DOMContentLoaded', async () => {
                     </label>
 
                     <div class="contactList_actions">
-                        <button name="contactList_actionInfo" class="contactList_actionBtn" title="info" onclick="infoRedirect('${contact.phone}')">
+                        <button name="contactList_actionInfo" class="contactList_actionBtn" title="info" onclick="infoRedirect('${contact.phone.replace(/[^0-9]/g, '')}')">
                             <img src="../images/SVG/info.svg">
                         </button>
                         <button name="contactList_actionEmail" class="contactList_actionBtn" title="Email" onclick="openWithBrowser('https://mail.google.com/mail/?view=cm&to=` + contact.email + `')">
@@ -39,7 +39,8 @@ window.addEventListener('DOMContentLoaded', async () => {
                             <img src="../images/SVG/instagram2.svg">
                         </button>
 
-                        <span class="contactList_deleteBtn" onclick="deleteContact('${contact.phone}')" title="Excluir"><img src="../images/SVG/trash.svg"></span>
+                        <button type="button" class="contactList_editBtn" onclick="editContact('${contact.phone}')" title="Editar"><img src="../images/SVG/edit.svg"></button>
+                        <button type="button" class="contactList_deleteBtn" onclick="deleteContact('${contact.phone}')" title="Excluir"><img src="../images/SVG/trash.svg"></button>
                     </div>
                     <span class="separator"></span>
                 </div>
@@ -48,7 +49,7 @@ window.addEventListener('DOMContentLoaded', async () => {
         return html;
     }
 
-    // Função principal para ler contatos
+    // Função principal para l  er contatos
     async function readContacts() {
         const contactListContainer = document.getElementById('contactListContainer');
 

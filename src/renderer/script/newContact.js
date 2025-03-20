@@ -31,7 +31,13 @@ async function addContactToJson(contactObj) {
         // Lê o conteúdo atual do arquivo JSON
         const oldData = await fs.readFile(filePath, 'utf8');
 
-        let data = JSON.parse(oldData);
+        let data;
+        try {
+            data = JSON.parse(oldData);
+        } catch (parseError) {
+            // Se houver erro de parse, inicia com array vazio
+            data = [];
+        }
 
         // Garante que 'data' seja um array antes de adicionar novos contatos
         if (!Array.isArray(data)) {
@@ -51,6 +57,7 @@ async function addContactToJson(contactObj) {
             return addContactToJson(contactObj); // Chama a função novamente
         } else {
             console.error('Erro ao ler o arquivo JSON:', error);
+            throw error; // Propaga o erro para tratamento superior
         }
     }
 }

@@ -8,21 +8,29 @@ function redir(path, timeout) {
         window.location.assign(path);
     }
     else {
-        console.error(`HTTP 400: Bad Request -> "Sintaxe de redirecionamento inválida"`);
+        console.error(`redir() -> HTTP 400: Bad Request -> "Sintaxe de redirecionamento inválida"`);
     }
 }
 
 // Funções de redirecionamento (adaptadas para Node.js)
 function socialRedirect(url) {
-    console.log(`Redirecionando para: ${url}`);
-    window.location.href = url;
+    try {
+        console.log(`socialRedirect -> Redirecionando para: ${url}`);
+        redir(url);
+    } catch (error) {
+        console.error(`socialRedirect -> Erro ao redirecionar para ${url}:`, error);
+    }
 }
 
 function infoRedirect(ctt) {
-    if (ctt) {
-        console.log(`Telefone selecionado: ${ctt}`);
-        localStorage.setItem('selectedPhone', ctt);
+    if (ctt.length > 9) {
+        try{
+            localStorage.setItem('ContactInfo_selectedContactPhoneNumber', ctt);
+            window.location.assign('./contactInfo.html');
+        } catch (error) {
+            console.error('infoRedirect -> Erro ao redirecionar para /contactInfo.html:', error);
+        }
     } else {
-        console.log('Número de telefone não encontrado.');
+        console.error('infoRedirect -> HTTP: 400 Bad Request -> "Sintaxe de redirecionamento inválida"');
     }
 }
