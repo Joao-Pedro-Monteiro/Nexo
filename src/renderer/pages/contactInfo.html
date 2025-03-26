@@ -4,14 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nexo - Contato</title>
-    <link href="../style/base.css" type="text/css" rel="stylesheet">
-    <link href="../style/contactInfo.css" type="text/css" rel="stylesheet">
-    <script src="../script/redir.js" type="text/javascript"></script>
+        <link href="../style/base.css" type="text/css" rel="stylesheet">
+        <link href="../style/contactInfo.css" type="text/css" rel="stylesheet">
+        <script src="../script/redir.js" type="text/javascript"></script>
+        <script src="../script/childprocess.js" type="text/javascript"></script>
+        <script src="../script/contactQuery.js" type="text/javascript"></script>
 </head>
+
+<script>
+
+    let name = localStorage.getItem('ContactInfo_selectedContactName');
+    const contact = contactQuery(name);
+
+    if(contact != undefined){
+        // Se o contato existe, espera a página carregar e plota os dados
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('contact-name').innerHTML = contact.name;
+            document.getElementById('contact-phone').innerHTML = `Número:` +  contact.phone;
+            document.getElementById('contact-email').innerHTML = `Email:` +  contact.email;
+            document.getElementById('contact-instagram').innerHTML =`Instagram:` +  contact.instagram;
+
+            // Email
+            if(contact.email.length > 0 && contact.email.includes('@')){
+                document.getElementById('contact-EmailRedirBtn').setAttribute('onclick', `openWithBrowser('https://mail.google.com/mail/?view=cm&to=` + contact.email + `')`);
+            } else {
+                document.getElementById('contact-EmailRedirBtn').style.display = 'none';
+            }
+
+            // Instagram
+            if(contact.instagram.length > 0){
+                if(contact.instagram.includes('@')){
+                    contact.instagram = contact.instagram.replace('@', '');
+                }
+                document.getElementById('contact-IgRedirBtn').setAttribute('onclick', `openWithBrowser('https://instagram.com/` + contact.instagram + `')`);
+            } else {
+                document.getElementById('contact-IgRedirBtn').style.display = 'none';
+            }
+            
+            // WhatsApp
+            const onlyNumbersPhone = contact.phone.replace(/[^0-9]/g, '');
+            document.getElementById('contact-WppRedirBtn').setAttribute('onclick', `openWhatsAppWithNumber('${onlyNumbersPhone}')`);
+            })
+    } else {
+        console.error('Contato não encontrado');
+    }   
+
+</script>
+
 <body>
     <header><img id="headerWordmark" src="../images/SVG/wordmark.svg" alt="Nexo" onclick="redir('./index.html')"></header>
-        <nav id="nav">
-        </nav>
         <main id="main">
             <section id="leftSection">
                 <nav id="navigationBar">
@@ -26,23 +67,45 @@
                 </nav>
             </section>
             <section id="centerSection">
-                <img id="contact-avatar">
-                <h1 id="contact-name"></h1>
+
+                <div id="contact-infoContainer">
+                    <img id="contact-avatar" src="../images/SVG/avatar.svg">
+                    <h1 id="contact-name"></h1>
+                </div>
+
+                <section id="contact-infoContainer2">
+                    <span class="contact-infoBox">
+                        <img src="../images/SVG/contactInfo_phone.svg">
+                        <p id="contact-phone"></p>
+                    </span>
+
+                    <span class="contact-infoBox">
+                        <img src="../images/SVG/contactInfo_email.svg">
+                        <p id="contact-email"></p>
+                        <button class="contact-infoBox-openInNew" id="contact-EmailRedirBtn" type="button" title="Ir para" onclick="">
+                            <img src="../images/SVG/openInNew.svg">
+                        </button>
+                    </span>
+
+                    <span class="contact-infoBox">
+                        <img src="../images/SVG/contactInfo_whatsapp.svg">
+                        <p id="contact-whatsapp">Conversar no WhatsApp</p>
+                        <button class="contact-infoBox-openInNew" id="contact-WppRedirBtn" type="button" title="Ir para" onclick="">
+                            <img src="../images/SVG/openInNew.svg">
+                        </button>
+                    </span>
+                    
+                    <span class="contact-infoBox">
+                        <img src="../images/SVG/contactInfo_instagram.svg">
+                        <p id="contact-instagram"></p>
+                        <button class="contact-infoBox-openInNew" id="contact-IgRedirBtn" type="button" title="Ir para" onclick="">
+                            <img src="../images/SVG/openInNew.svg">
+                        </button>
+                    </span>
+                </section>
+
             </section>
             <section id="rightSection"></section>
         </main>
 </body>
 </html>
-
-<script>
-
-    let phone = localStorage.getItem('ContactInfo_selectedContactPhoneNumber');
-    if (phone.length >= 8 && phone.length < 12) {
-        phone = ('(' + phone.substring(0,2) + ')' + phone.substring(2,(phone.length)));
-    } else {
-        console.log('Phone number is not valid');
-    };
-
-    
-    
-</script>

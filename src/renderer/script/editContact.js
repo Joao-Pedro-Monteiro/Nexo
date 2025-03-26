@@ -1,9 +1,17 @@
-const path = require('path');
-const contactListPath = path.join(__dirname, '..', '..', 'data', 'contacts.json');
+function editContactRedirect(phone) {
+  if (phone.length > 9) {
+        localStorage.setItem('ContactInfo_selectedContactName', phone);
+        redir('./editContact.html');
+    } else {
+        console.error('editContactRedirect -> HTTP: 400 Bad Request -> "Sintaxe de redirecionamento inválida"');
+    }
+}
 
 // FUNÇÃO PARA EDITAR O ITEM DA ARRAY
 function editContact(contacts, phone, newName, newPhone, newEmail) {
-    const fs = require('fs');
+  const path = require('path');
+  const contactListPath = path.join(__dirname, '..', '..', 'data', 'contacts.json');
+  const fs = require('fs');
     // Verifica se dados é um array
     if (Array.isArray(contacts)) {
       // Encontra o índice do objeto com o número correspondente

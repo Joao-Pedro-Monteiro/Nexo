@@ -23,14 +23,14 @@ function socialRedirect(url) {
 }
 
 function infoRedirect(ctt) {
-    if (ctt.length > 9) {
+    if (ctt.length > 0) {
         try{
-            localStorage.setItem('ContactInfo_selectedContactPhoneNumber', ctt);
+            localStorage.setItem('ContactInfo_selectedContactName', ctt);
             window.location.assign('./contactInfo.html');
         } catch (error) {
             console.error('infoRedirect -> Erro ao redirecionar para /contactInfo.html:', error);
         }
     } else {
-        console.error('infoRedirect -> HTTP: 400 Bad Request -> "Sintaxe de redirecionamento inválida"');
+        console.error('infoRedirect -> HTTP: 400 Bad Request -> "Sintaxe de redirecionamento inválida" -> Parâmetro: tamanho menor que 0)');
     }
 }

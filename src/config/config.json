@@ -1,0 +1,88 @@
+{
+    "app": {
+        "name": "Nexo",
+        "version": {
+            "number": "0.9.0",
+            "stage": "beta",
+            "releaseDate": "2024-03-25"
+        },
+        "environment": "production",
+        "logging": {
+            "level": "info",
+            "file": {
+                "path": "logs/app.log",
+                "maxSize": "10MB",
+                "backups": 3
+            },
+            "console": {
+                "enabled": true,
+                "colorize": true
+            }
+        },
+        "ui": {
+            "theme": {
+                "mode": "light",
+                "primaryColor": "#3498db",
+                "secondaryColor": "#2ecc71"
+            },
+            "language": "pt-BR"
+        },
+        "platform": {
+            "os": "Windows",
+            "architecture": "x64",
+            "minVersion": "10"
+        },
+        "security": {
+            "encryption": "AES-256",
+            "csrf": true,
+            "rateLimiting": {
+                "enabled": true,
+                "maxRequestsPerMinute": 100
+            }
+        },
+        "copyright": {
+            "text": "© 2025 Nexo. Todos os direitos reservados.",
+            "owner": "João Pedro de Brito Monteiro"
+        }
+    },
+    "client": {
+        "profile": {
+            "name": "",
+            "phone": {
+                "number": "",
+                "country": "",
+                "verified": false
+            },
+            "email": {
+                "address": "",
+                "verified": false
+            },
+            "socialMedia": {
+                "instagram": {
+                    "username": "",
+                    "connected": false
+                }
+            }
+        },
+        "preferences": {
+            "notifications": {
+                "email": false,
+                "push": false,
+                "sms": false
+            },
+            "privacyMode": false
+        }
+    },
+    "development": {
+        "debugMode": false,
+        "apiMockEnabled": false
+    },
+    "instaledApps": {
+        "whatsapp": false,
+        "instagram": false,
+        "facebook": false,
+        "twitter": false,
+        "linkedin": false,
+        "browser": ""
+    }
+}
