@@ -3,62 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nexo - Editar Contato</title>
-    <link href="../style/base.css" type="text/css" rel="stylesheet">
-    <script src="../script/redir.js" type="text/javascript"></script>
-    <script src="../script/contactQuery.js" type="text/javascript"></script>
+    <title>Nexo - Contato</title>
+        <link href="../style/base.css" type="text/css" rel="stylesheet">
+        <link href="../style/editContact.css" type="text/css" rel="stylesheet">
+        <script src="../script/redir.js" type="text/javascript"></script>
+        <script src="../script/contactQuery.js" type="text/javascript"></script>
+        <script src="../script/editContact.js" type="text/javascript"></script>
 </head>
+
+<script>
+    let contact;
+    document.addEventListener('DOMContentLoaded', () => {
+        try {
+            let name = localStorage.getItem('ContactInfo_selectedContactName');
+            contact = contactQuery(name);
+            
+            if (contact) {
+                console.log('Contato encontrado: ' + contact.name);
+                
+                // Corrigido: IDs corretos e verificação de existência
+                const nameInput = document.getElementById('editContactInput-name');
+                const phoneInput = document.getElementById('editContactInput-phone');
+                const emailInput = document.getElementById('editContactInput-email');
+                const instagramInput = document.getElementById('editContactInput-instagram');
+                
+                if (nameInput) nameInput.value = contact.name;
+                if (phoneInput) phoneInput.value = contact.phone;
+                if (emailInput) emailInput.value = contact.email;
+                if (instagramInput) instagramInput.value = contact.instagram;
+            } else {
+                alert('Contato não encontrado!');
+            }
+        } catch (error) {
+            console.error("editContato.html -> ERROR: " + error);
+            alert('Erro ao carregar contato: ' + error);
+        }
+    });
+</script>
+
 <body>
     <header><img id="headerWordmark" src="../images/SVG/wordmark.svg" alt="Nexo" onclick="redir('./index.html')"></header>
-    <main id="main">
-        <section id="leftSection">
-            <nav id="navigationBar">
-                <span class="navigationBar_item" id="navigationBar_item_contacts" onclick="redir('./index.html')">
-                    <img src="../images/SVG/back.svg    ">
-                    <p>Voltar</p>
-                </span>
-            </nav>
-        </section>
-        <section id="centerSection">
-
-            <!-- <div id="contact-infoContainer">
-                <img id="contact-avatar" src="../images/SVG/avatar.svg">
-                <h1 id="contact-name"></h1>
-            </div>
-
-            <section id="contact-infoContainer2">
-                <span class="contact-infoBox">
-                    <img src="../images/SVG/contactInfo_phone.svg">
-                    <p id="contact-phone"></p>
-                </span>
-
-                <span class="contact-infoBox">
-                    <img src="../images/SVG/contactInfo_email.svg">
-                    <p id="contact-email"></p>
-                    <button class="contact-infoBox-openInNew" id="contact-EmailRedirBtn" type="button" title="Ir para" onclick="">
-                        <img src="../images/SVG/openInNew.svg">
-                    </button>
-                </span>
-
-                <span class="contact-infoBox">
-                    <img src="../images/SVG/contactInfo_whatsapp.svg">
-                    <p id="contact-whatsapp">Conversar no WhatsApp</p>
-                    <button class="contact-infoBox-openInNew" id="contact-WppRedirBtn" type="button" title="Ir para" onclick="">
-                        <img src="../images/SVG/openInNew.svg">
-                    </button>
-                </span>
-                
-                <span class="contact-infoBox">
-                    <img src="../images/SVG/contactInfo_instagram.svg">
-                    <p id="contact-instagram"></p>
-                    <button class="contact-infoBox-openInNew" id="contact-IgRedirBtn" type="button" title="Ir para" onclick="">
-                        <img src="../images/SVG/openInNew.svg">
-                    </button>
-                </span> -->
+        <main id="main">
+            <section id="leftSection">
+                <nav id="navigationBar">
+                    <span class="navigationBar_item" id="navigationBar_item_contacts" onclick="redir('./index.html')">
+                        <img src="../images/SVG/contacts.svg">
+                        <p>Contatos</p>
+                    </span>
+                    <span class="navigationBar_item" id="navigationBar_item_new" onclick="redir('./newContact.html')">
+                        <img src="../images/SVG/add_circle.svg">
+                        <p>Novo</p>
+                    </span>
+                </nav>
             </section>
+            <section id="centerSection">
 
-        </section>
-        <section id="rightSection"></section>
-    </main>
+                <div id="contact-infoContainer">
+                    <img id="contact-avatar" src="../images/SVG/avatar.svg">
+                    <input type="text" name="editContactInput-name" id="editContactInput-name">
+                </div>
+
+                <section id="contact-infoContainer2">
+
+                    <span class="contact-infoBox">
+                        <img src="../images/SVG/contactInfo_phone.svg">
+                        <input type="tel" name="editContactInput-phone" id="editContactInput-phone">
+                    </span>
+
+                    <span class="contact-infoBox">
+                        <img src="../images/SVG/contactInfo_email.svg">
+                        <input type="email" name="editContactInput-email" id="editContactInput-email" placeholder="example@email.com">
+                    </span>
+                    
+                    <span class="contact-infoBox">
+                        <img src="../images/SVG/contactInfo_instagram.svg">
+                        <input type="text" name="editContactInput-instagram" id="editContactInput-instagram" placeholder="@usuario">
+                    </span>
+
+                    <div id="editContactBtns">
+                        <button type="button" id="editContactInput-save" onclick="editContact()">Salvar</button>
+                        <button type="reset" id="editContactInput-discard" onclick="plotFields()">Descartar Alterações</button>    
+                    </div>
+                    
+                </section>
+
+                
+            </section>
+            <section id="rightSection"></section>   
+        </main>
 </body>
 </html>

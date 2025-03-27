@@ -17,8 +17,9 @@
 
 #contact-name{
     font-size: 32px;
-    font-family: K2D;
-    color: #282626;
+    font-family: Teachers;
+    color: #000;
+    font-weight: 400;
 }
 
 #contact-infoContainer2{
