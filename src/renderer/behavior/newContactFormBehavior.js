@@ -1,38 +1,54 @@
 window.addEventListener('DOMContentLoaded', () => {
     const submitbtn = document.getElementById('submitBtn');
-    nameField = document.getElementById('name');
-    phoneField = document.getElementById('phone');
+    const nameField = document.getElementById('name');
+    const phoneField = document.getElementById('phone');
     nameField.focus();
-    nameOK = false;
-    phoneOK = false;
-    
+
+    // Flags de validação
+    let nameOK = false;
+    let phoneOK = false;
+
     // Desabilita o botão de submit e formata-o
     submitbtn.setAttribute('disabled', true);
     submitbtn.style.backgroundColor = 'gray';
     submitbtn.style.cursor = 'not-allowed';
 
-    // Verifica o valor do campo nome
-    nameField.addEventListener('input', () => {
-        if(nameField.value.length > 0){
-            nameOK = true;
+    // Verifica a tecla Enter
+    document.addEventListener('keydown', function(event) {
+        // Verifica se a tecla Enter foi pressionada sem modificadores
+        if (
+            event.key === 'Enter' &&
+            !event.altKey && !event.ctrlKey &&
+            !event.metaKey && !event.shiftKey
+        ) {
+            event.preventDefault();
+            if (nameOK && phoneOK) {
+                submitbtn.click();
+            }
         }
-        if(nameOK && phoneOK){
+    });
+
+    // Validação em tempo real
+    function validarCampos() {
+        nameOK = nameField.value.trim().length > 0;
+        const phoneLength = phoneField.value.trim().length;
+        phoneOK = phoneLength >= 10 && phoneLength <= 14;
+
+        if (nameOK && phoneOK) {
             submitbtn.removeAttribute('disabled');
             submitbtn.style.backgroundColor = '#8403DA';
             submitbtn.style.cursor = 'pointer';
+        } else {
+            submitbtn.setAttribute('disabled', true);
+            submitbtn.style.backgroundColor = '#ccc';
+            submitbtn.style.cursor = 'not-allowed';
         }
-    })
-    // Verifica o valor do campo telefone
-    phoneField.addEventListener('input', () => {
-        if(phoneField.value.length > 11){
-            phoneOK = true;
-        }
-        if(nameOK && phoneOK){
-            submitbtn.removeAttribute('disabled');
-            submitbtn.style.backgroundColor = '#8403DA';
-            submitbtn.style.cursor = 'pointer';
-        }
-    })
-    
-    
-})
+    }
+
+    // Escuta mudanças em tempo real
+    nameField.addEventListener('input', validarCampos);
+    phoneField.addEventListener('input', validarCampos);
+
+    // Verifica ao carregar (caso já tenha algo preenchido)
+    validarCampos();
+});

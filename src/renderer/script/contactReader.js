@@ -10,7 +10,7 @@ window.addEventListener('DOMContentLoaded', async () => {
         contacts.sort((a, b) => a.name.localeCompare(b.name));
 
         contacts.forEach((contact, index) => {
-            contact.phone = contact.phone.replace(/[^0-9()]/g, '');
+            contact.phone = contact.phone.replace(/[^0-9()\s-]/g, '').trim();
             contact.instagram = contact.instagram.replace(/@/g, '');
             const contactId = `contact${index + 1}`;
             html += `
@@ -40,7 +40,7 @@ window.addEventListener('DOMContentLoaded', async () => {
                         </button>
 
                         <button type="button" class="contactList_editBtn" onclick="editContactRedirect('${contact.name}')" title="Editar"><img src="../images/SVG/edit.svg"></button>
-                        <button type="button" class="contactList_deleteBtn" onclick="deleteContact('${contact.name}')" title="Excluir"><img src="../images/SVG/trash.svg"></button>
+                        <button type="button" class="contactList_deleteBtn" onclick="deleteContact('${contact.phone}')" title="Excluir"><img src="../images/SVG/trash.svg"></button>
                     </div>
                     <span class="separator"></span>
                 </div>

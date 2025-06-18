@@ -6,7 +6,7 @@
   "scripts": {
     "test": "test",
     "start": "electron .",
-    "dev": "electron . --watch"
+    "indev": "electron . --watch"
   },  "repository": {
     "type": "git",
     "url": "git+https://github.com/GelinGLN/Nexo.git"
