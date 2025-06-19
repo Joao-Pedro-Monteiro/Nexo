@@ -7,11 +7,31 @@ window.addEventListener('DOMContentLoaded', () => {
     // Flags de validação
     let nameOK = false;
     let phoneOK = false;
-
+    
     // Desabilita o botão de submit e formata-o
     submitbtn.setAttribute('disabled', true);
     submitbtn.style.backgroundColor = 'gray';
     submitbtn.style.cursor = 'not-allowed';
+
+    // Formata e filtra o campo de telefone
+    phoneField.addEventListener('input', function (e) {
+        let numero = e.target.value.replace(/\D/g, ''); // remove não numéricos
+        numero = numero.substring(0, 11); // limita a 11 dígitos
+
+        let formatado = '';
+
+        if (numero.length > 0) {
+            formatado += '(' + numero.substring(0, 2); // DDD inicial
+        }
+        if (numero.length >= 3) {
+            formatado += ') ' + numero.substring(2, 7); // início do número
+        }
+        if (numero.length >= 8) {
+            formatado += '-' + numero.substring(7); // parte final
+        }
+
+        e.target.value = formatado;
+    });
 
     // Verifica a tecla Enter
     document.addEventListener('keydown', function(event) {
@@ -31,8 +51,8 @@ window.addEventListener('DOMContentLoaded', () => {
     // Validação em tempo real
     function validarCampos() {
         nameOK = nameField.value.trim().length > 0;
-        const phoneLength = phoneField.value.trim().length;
-        phoneOK = phoneLength >= 10 && phoneLength <= 14;
+        const clearPhone = phoneField.value.replace(/\D/g, '');
+        phoneOK = clearPhone.length === 11; // (2 do DDD + 9 do número)
 
         if (nameOK && phoneOK) {
             submitbtn.removeAttribute('disabled');
