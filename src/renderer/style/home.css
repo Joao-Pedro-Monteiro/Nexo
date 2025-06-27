@@ -1,0 +1,200 @@
+/* Contact List */
+#contactListContainer {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 15px;
+    cursor: default;
+}
+
+.contactList_item {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+}
+
+.contactList_itemInfo {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.contactList_itemInfo:hover {
+    background-color: #f0f0f0;
+    padding: 5px;
+}
+
+.contactList_avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 9999px;
+    box-shadow: 0 0 4px #28262670;
+}
+
+.contactList_info {
+    width: auto;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.contactList_name {
+    font-family: Teachers;
+    font-size: 20px;
+    color: #282626;
+    opacity: 0.75;
+
+}
+
+.contactList_phone {
+    font-family: Teachers;
+    font-size: 18px;
+    font-weight: 100;
+    color: #282626;
+    opacity: 0.75;
+}
+
+/* Contact Actions */
+.contactList_actions{
+    width: 100%;
+    height: fit-content;
+    padding: 10px 30px 10px;
+    display: flex;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 10px;
+    pointer-events: none;
+}
+
+.contactList_itemToggle{
+    display: none;
+}
+
+/* COMPORTAMENTO DOS ELEMENTOS QUANDO O CONTATO É SELECIONADO */
+.contactList_item:has(.contactList_itemToggle:checked) .contactList_actions {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all; /* Ativa interação quando visível */
+}
+.contactList_item:has(.contactList_itemToggle:checked) .contactList_itemInfo {
+    padding: 5px;
+    background-color: #f0f0f0;
+    border: solid 1px #d9d9d9;
+    border-radius: 20px;
+}
+.contactList_item:has(.contactList_itemToggle:checked) .contactList_deleteBtn {
+    opacity: 1;
+}
+
+.contactList_actions.visible {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.contactList_actionBtn{
+    width: 30px;
+    height: 30px;
+    background: none;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: ease-out 0.2s;
+}
+.contactList_actionBtn img{
+    width: 100%;
+    height: 100%;
+}
+
+.contactList_actionBtn:hover{
+    transform: scale(1.2);
+}
+
+.contactList_actionBtn:active{
+    transform: scale(0.8);
+}
+
+button[name="contactList_actionInfo"]:hover{
+    border-radius: 999px;
+    box-shadow: 0 0 30px #000;
+}
+button[name="contactList_actionEmail"]:hover{
+    box-shadow: 0 0 30px #4bd0fc;
+}
+button[name="contactList_actionWhatsapp"]:hover{
+    box-shadow: 0 0 30px #45D354;
+}
+button[name="contactList_actionInstagram"]:hover{
+    box-shadow: 0 0 30px #D43377;
+}
+
+/* Edit Button */
+.contactList_editBtn{
+    width: 19px;
+    height: 19px;
+    background: none;
+    margin-left: auto;
+    border: none;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all ease 0.1s;
+}
+.contactList_editBtn img{
+    width: 20px;
+    height: 20px;
+}
+
+/* Delete Button */
+.contactList_deleteBtn{
+    width: fit-content;
+    height: fit-content;
+    background: none;
+    border: none;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all ease 0.1s;
+}
+.contactList_deleteBtn img{
+    width: 20px;
+    height: 20px;
+}
+
+/* Comportamento do botão de edição*/
+.contactList_editBtn:hover {
+    padding-top: 10px;
+    border-top: solid 2px #0095ff;
+}
+
+.contactList_editBtn:focus{
+    padding-top: 10px;
+    border-top: solid 2px #0095ff;
+}
+
+/*  Comportamento do botão de exclusão*/
+.contactList_deleteBtn:hover{
+    padding-top: 3px;
+    border-top: solid 2px #ff0000;
+}
+
+.contactList_deleteBtn:focus{
+    padding-top: 3px;
+    border-top: solid 2px #ff0000;
+}
