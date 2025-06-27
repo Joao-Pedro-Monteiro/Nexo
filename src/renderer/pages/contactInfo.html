@@ -4,15 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nexo - Contato</title>
-        <link href="../style/base.css" type="text/css" rel="stylesheet">
-        <link href="../style/contactInfo.css" type="text/css" rel="stylesheet">
-        <script src="../script/redir.js" type="text/javascript"></script>
-        <script src="../middleware/childprocess.js" type="text/javascript"></script>
-        <script src="../script/contactQuery.js" type="text/javascript"></script>
+
+    <link href="../style/base.css" type="text/css" rel="stylesheet">
+    <link href="../style/contactInfo.css" type="text/css" rel="stylesheet">
+    
+    <script src="../script/redir.js" type="text/javascript"></script>
+    <script src="../middleware/childprocess.js" type="text/javascript"></script>
+    <script src="../script/contactQuery.js" type="text/javascript"></script>
+    <script src="../script/config.js" type="text/javascript"></script>
 </head>
 
 <script>
-
     let name = localStorage.getItem('ContactInfo_selectedContactName');
     const contact = contactQuery(name);
 
@@ -20,9 +22,8 @@
         // Se o contato existe, espera a página carregar e plota os dados
         document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('contact-name').innerHTML = contact.name;
-            document.getElementById('contact-phone').innerHTML = `Número:` +  contact.phone;
-            document.getElementById('contact-email').innerHTML = `Email:` +  contact.email;
-            document.getElementById('contact-instagram').innerHTML =`Instagram:` +  contact.instagram;
+            document.getElementById('contact-phone').innerHTML = contact.phone;
+            document.getElementById('contact-email').innerHTML = contact.email;;
 
             // Email
             if(contact.email.length > 0 && contact.email.includes('@')){
@@ -44,7 +45,14 @@
             // WhatsApp
             const onlyNumbersPhone = contact.phone.replace(/[^0-9]/g, '');
             document.getElementById('contact-WppRedirBtn').setAttribute('onclick', `openWhatsAppWithNumber('${onlyNumbersPhone}')`);
+                // Compartilhar
+                document.getElementById('contact-ShareBtn').addEventListener('click', (e)=>{
+                    const mensagem = `Contato para salvar:%0A*${contact.name}*%0ANúmero: ${contact.phone}`;
+                    const link = `https://api.whatsapp.com/send/?text=${mensagem}`;
+                    Childprocess.openWithBrowser(link);
+                })
             })
+
     } else {
         console.error('Contato não encontrado');
     }   
@@ -74,12 +82,12 @@
                 </div>
 
                 <section id="contact-infoContainer2">
-                    <span class="contact-infoBox">
+                    <span class="contact-infoBox" name="Phone">
                         <img src="../images/SVG/contactInfo_phone.svg">
                         <p id="contact-phone"></p>
                     </span>
 
-                    <span class="contact-infoBox">
+                    <span class="contact-infoBox" name="Email">
                         <img src="../images/SVG/contactInfo_email.svg">
                         <p id="contact-email"></p>
                         <button class="contact-infoBox-openInNew" id="contact-EmailRedirBtn" type="button" title="Ir para" onclick="">
@@ -87,20 +95,25 @@
                         </button>
                     </span>
 
-                    <span class="contact-infoBox">
+                    <span class="contact-infoBox" name="WhatsApp">
                         <img src="../images/SVG/contactInfo_whatsapp.svg">
-                        <p id="contact-whatsapp">Conversar no WhatsApp</p>
+                        <p id="contact-whatsapp">Ir para WhatsApp</p>
                         <button class="contact-infoBox-openInNew" id="contact-WppRedirBtn" type="button" title="Ir para" onclick="">
                             <img src="../images/SVG/openInNew.svg">
                         </button>
                     </span>
                     
-                    <span class="contact-infoBox">
+                    <span class="contact-infoBox" name="Instagram">
                         <img src="../images/SVG/contactInfo_instagram.svg">
-                        <p id="contact-instagram"></p>
+                        <p id="contact-instagram">Ir para o Instagram</p>
                         <button class="contact-infoBox-openInNew" id="contact-IgRedirBtn" type="button" title="Ir para" onclick="">
                             <img src="../images/SVG/openInNew.svg">
                         </button>
+                    </span>
+
+                    <span class="contact-infoBox" name="Share" style="margin-top: 30px;">
+                        <img src="../images/SVG/share.svg">
+                        <p id="contact-ShareBtn">Compartilhar</p>
                     </span>
                 </section>
 
