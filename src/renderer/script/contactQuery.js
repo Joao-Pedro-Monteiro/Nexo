@@ -1,5 +1,5 @@
 const path = require('path');
-const contactListPath = path.join(__dirname, '..', '..', 'data', 'contacts.json');
+const contactListPath = path.join(__dirname, '..', 'contacts.json');
 const fs = require('fs');
 
 // FUNÇÃO PARA BUSCAR O ITEM DA ARRAY

@@ -49,12 +49,13 @@ window.addEventListener('DOMContentLoaded', async () => {
         return html;
     }
 
-    // Função principal para l  er contatos
+    // Função principal para ler contatos
     async function readContacts() {
         const contactListContainer = document.getElementById('contactListContainer');
 
         try {
-            const filePath = path.join(__dirname, '..', '..', 'data', 'contacts.json');
+            const filePath = path.join('../../data/contacts.json');
+
             const data = await fs.readFile(filePath, 'utf8');
             const contacts = JSON.parse(data);
             
