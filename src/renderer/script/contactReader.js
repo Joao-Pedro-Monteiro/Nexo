@@ -1,8 +1,27 @@
+/**
+ * @fileoverview Módulo para leitura e exibição de contatos.
+ * @description Fornece uma função para ler contatos de um arquivo .json e gerar o HTML correspondente para exibição.
+ * Quando o DOM estiver completamente carregado, a função readContacts é chamada para buscar e exibir os contatos.
+ * 
+ * @function readContacts - Função que lê os contatos do arquivo e gera o HTML.
+ * @function generateContactList - Função auxiliar que gera o HTML a partir da lista de contatos.
+ * 
+ * @requires fs - Módulo do Node.js para manipulação de sistema de arquivos.
+ * @requires path - Módulo do Node.js para manipulação de caminhos de arquivos.
+ */
+
 window.addEventListener('DOMContentLoaded', async () => {
     const fs = require('fs').promises;
     const path = require('path');
 
-    // Função para gerar o HTML
+    /**
+     * @function generateContactList - Função auxiliar que gera o HTML a partir da lista de contatos.
+     * @description Gera o HTML para exibição dos contatos em ordem alfabética a partir de um array de objetos de contatos.
+     * 
+     * @param {Object[]} contacts - Array de objetos de contatos (um objeto com objetos dentro. Ex.: contacts.contact1.telefone).
+     * @returns {string} - HTML gerado a partir da lista de contatos.
+     */
+    
     function generateContactList(contacts) {
         let html = '';
 
@@ -49,7 +68,18 @@ window.addEventListener('DOMContentLoaded', async () => {
         return html;
     }
 
-    // Função principal para ler contatos
+    /**
+     * @function readContacts - Função que lê os contatos do arquivo e gera o HTML.
+     * @description Lê os contatos do arquivo contacts.json e gera o HTML para exibição.
+     * 
+     * @constant {contactListContainer} HTMLElement - Elemento do DOM onde o HTML dos contatos será inserido.
+     * @constant {filePath} String - Caminho para arquivo de contatos.
+     * @constant {data} String - Conteúdo bruto do arquivo de contatos.
+     * @constant {contacts} Object[] - Array de objetos de contatos parseados a partir do JSON.
+     * @constant {html} String - HTML gerado a partir da lista de contatos com o uso da função generateContactList().
+     * @returns {Promise<string>} - Promessa que resolve para o HTML gerado dos contatos.
+     */
+
     async function readContacts() {
         const contactListContainer = document.getElementById('contactListContainer');
 
