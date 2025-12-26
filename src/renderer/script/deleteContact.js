@@ -14,7 +14,7 @@
  */
 
 const path = require('path');
-const contactListPath = path.join('../../data/contacts.json');
+const contactListPath = path.join(__dirname, '../contacts.json');
 
 // FUNÇÃO PARA DELETAR O ITEM DA ARRAY
 function explicitDeleteFunction(contacts, phone) {

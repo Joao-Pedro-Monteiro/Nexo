@@ -7,5 +7,5 @@
  * Quando importado, este arquivo disponibiliza o objeto de configuração para uso em todo o renderer process como uma global.
  */
 
-const cfgimp_configArchivePath = path.join(__dirname, '..', '..', 'config', 'config.js');
+const cfgimp_configArchivePath = path.join(__dirname, '../../config/config.js');
 const config = require(cfgimp_configArchivePath);

@@ -1,6 +1,6 @@
 const path = require('path');
 const fs = require('fs');
-const contactListPath = path.join(__dirname, '..', 'contacts.json');
+const contactListPath = path.join(__dirname, '../contacts.json');
 
 /**
  * @fileoverview Módulo para consulta de contatos.
@@ -28,11 +28,8 @@ function contactQuery(queryParam) {
         if( contact !== -1){
             contact = contactList[contact];
         } else {
-            if(confirm("Contato não encontrado. Deseja criar um novo contato?")){
-                window.location.assign('./newContact.html');
-            } else {
-            window.location.reload();
-            };
+            alert("Contato não encontrado.");
+            window.location.assign('index.html');
         };
 
         return contact; //* Retorna o "objeto" do contato encontrado
