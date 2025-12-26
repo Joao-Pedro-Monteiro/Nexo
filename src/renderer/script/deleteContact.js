@@ -1,5 +1,20 @@
+/**
+ * @fileoverview Módulo para deletar contatos.
+ * @description Fornece uma função para deletar um contato de um arquivo .json com base no número de telefone.
+ * 
+ * @function deleteContact - Função que lê o arquivo de contatos, deleta o contato correspondente ao número fornecido e atualiza o arquivo.
+ * @function explicitDeleteFunction - Função auxiliar que remove o contato do array de contatos.
+ * 
+ * @requires fs - Módulo do Node.js para manipulação de sistema de arquivos.
+ * @requires path - Módulo do Node.js para manipulação de caminhos de arquivos.
+ * 
+ * @Nota: Sei que este módulo funciona perfeitamente, mas não entendi porque fiz duas funções de exclusão.
+ * E não tem como documentar algo que não entendo. mas, como vou refatorar todo o app nas próximas versões,
+ * deixarei assim por enquanto.
+ */
+
 const path = require('path');
-const contactListPath = path.join(__dirname, '..', '..', 'data', 'contacts.json');
+const contactListPath = path.join(__dirname, '../contacts.json');
 
 // FUNÇÃO PARA DELETAR O ITEM DA ARRAY
 function explicitDeleteFunction(contacts, phone) {

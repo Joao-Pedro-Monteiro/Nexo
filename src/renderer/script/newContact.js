@@ -1,11 +1,13 @@
 const fs = require('fs').promises; // Usando promises para operações assíncronas
+const { Console } = require('console');
+const { url } = require('inspector/promises');
 const path = require('path');
-const filePath = path.join(__dirname, '..', '..', 'data', 'contacts.json'); // Caminho para o arquivo JSON
+const filePath = path.join(__dirname, '../contacts.json'); // Caminho para o arquivo JSON
 let formValues = {};
 
 window.addEventListener('DOMContentLoaded', () => {
 
-const submitBtn = document.getElementById('submitBtn');
+    const submitBtn = document.getElementById('submitBtn');
 
     submitBtn.addEventListener('click', async (e) => {
         e.preventDefault();
@@ -23,7 +25,8 @@ const submitBtn = document.getElementById('submitBtn');
             .catch((error) => {
                 console.error('Erro ao adicionar o contato:', error);
             })
-    });})
+    });
+})
 
 // Função que registra o novo contato no arquivo JSON
 async function addContactToJson(contactObj) {

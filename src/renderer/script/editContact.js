@@ -1,3 +1,8 @@
+/**
+ * Sei que funciona, mas não entendi como.
+ * não posso documentar algo que não entendo.
+ */
+
 const contactManager = {
     // Função para redirecionar para edição de contato
     editContactRedirect: function(cttName) {
